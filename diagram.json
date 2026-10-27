@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "author": "Grupo 4",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico-w",
+      "id": "pico",
+      "top": 20,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -100,
+      "left": 250,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 40,
+      "left": 280,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 180,
+      "left": 260,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 180,
+      "left": 340,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 240,
+      "left": 270,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 240,
+      "left": 350,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "dht1:VCC",
+      "pico:3V3",
+      "red",
+      []
+    ],
+    [
+      "dht1:GND",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "dht1:SDA",
+      "pico:GP16",
+      "green",
+      []
+    ],
+    [
+      "ldr1:VCC",
+      "pico:3V3",
+      "red",
+      []
+    ],
+    [
+      "ldr1:GND",
+      "pico:GND.2",
+      "black",
+      []
+    ],
+    [
+      "ldr1:AO",
+      "pico:GP26",
+      "green",
+      []
+    ],
+    [
+      "led1:A",
+      "pico:GP18",
+      "green",
+      []
+    ],
+    [
+      "led1:C",
+      "r1:1",
+      "black",
+      []
+    ],
+    [
+      "r1:2",
+      "pico:GND.3",
+      "black",
+      []
+    ],
+    [
+      "led2:A",
+      "pico:GP19",
+      "red",
+      []
+    ],
+    [
+      "led2:C",
+      "r2:1",
+      "black",
+      []
+    ],
+    [
+      "r2:2",
+      "pico:GND.3",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

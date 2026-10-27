@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS lecturas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha TEXT NOT NULL,
+    temperatura REAL,
+    humedad REAL,
+    luz INTEGER,
+    estado TEXT
+);
+
+CREATE TABLE IF NOT EXISTS eventos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha TEXT NOT NULL,
+    tipo TEXT NOT NULL,
+    detalle TEXT NOT NULL
+);
+
+SELECT * FROM lecturas ORDER BY id DESC LIMIT 20;
+SELECT * FROM eventos ORDER BY id DESC LIMIT 20;
